@@ -6,9 +6,10 @@ import { useTypewriter, Cursor } from 'react-simple-typewriter'
 const Writer = () => {
   const [text] = useTypewriter({
             words:['Ciência da Computação', 'Engenharia da Computação', 'Sistemas de Informação'],
-            typeSpeed:70,
-            deleteSpeed:50,
-            delaySpeed:1000
+            loop: 5,
+            typeSpeed: 70,
+            deleteSpeed: 50,
+            delaySpeed: 1000
             })
 
   return (

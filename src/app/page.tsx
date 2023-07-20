@@ -19,6 +19,7 @@ export default function Home() {
         <div className="container p-20" id='Cursos'>
           <h1 className="text-4xl">Other Content</h1>
         </div>
+
       </section>
     </main>
   )
