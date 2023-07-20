@@ -1,4 +1,4 @@
 export function scrollToNextSection() {
-  const nextSection = document.getElementById('next-section');
+  const nextSection = document.getElementById('Cursos');
   nextSection.scrollIntoView({ behavior: 'smooth' });
 }
