@@ -1,6 +1,6 @@
 import Writer  from '../app/Writer'
 import ButtonDown  from '../app/ButtonDown'
-
+import Curses from '../app/Curses'
 
 export default function Home() {
   return (
@@ -15,12 +15,9 @@ export default function Home() {
             </div>
           <ButtonDown/>  
           </header>
-          
-        <div className="container p-20" id='Cursos'>
-          <h1 className="text-4xl">Other Content</h1>
-        </div>
-
       </section>
+
+      <Curses/>
     </main>
   )
 }
