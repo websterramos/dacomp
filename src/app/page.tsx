@@ -1,7 +1,7 @@
-import Writer  from '../app/Writer'
+import Writer  from '../components/Writer'
 import Image from 'next/image'
-import ButtonDown  from '../app/ButtonDown'
-import Curses from '../app/Curses'
+import ButtonDown  from '../components/ButtonDown'
+import Curses from '../components/Curses'
 
 export default function Home() {
   return (
