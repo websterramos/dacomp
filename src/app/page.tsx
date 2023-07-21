@@ -10,7 +10,7 @@ export default function Home() {
           <header className="w-full flex flex-col justify-evenly h-[35rem]  bg-gradient-to-r from-dark-blue to-light-blue ">
             <div className='flex md:justify-evenly  justify-center'>
             <div className="flex flex-col justify-center items-center p-16">
-              <h1 className=" text-center text-5xl text-cyan-700 font-bold drop-shadow-lg">Bem-vind@ ao 
+              <h1 className="text-center text-4xl text-cyan-700 font-bold drop-shadow-lg">Bem-vind@ ao 
                 <span className="text-white"> DACOMP</span>
               </h1>
               <Writer/>
@@ -33,7 +33,13 @@ export default function Home() {
         </header>
       </section>
 
-      <Curses/>
+      <div className='flex-col'>
+        <div className='flex justify-center items-center'>
+          <h3 className='text-gray-600 shadow text-4xl'>Cursos</h3>
+        </div>
+
+        <Curses/>
+      </div>
     </main>
   )
 }
