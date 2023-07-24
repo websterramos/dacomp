@@ -61,7 +61,16 @@ const AboutChild = () => {
       name: 'Theo',
       course: 'SIN',
       phrase: 'nada me faltara',
-      photo: '',
+      photo: '/membros/Theo.jpg',
+      link: '#'
+      },
+      
+      {
+      id: 2,
+      name: 'Enzo',
+      course: 'ECO',
+      phrase: 'nada me faltara',
+      photo: '/membros/Theo.jpg',
       link: '#'
       }
     ]
@@ -89,6 +98,7 @@ const AboutChild = () => {
         </Tab.List>
 
         <Tab.Panels className='mt-2'>
+          <div className='grid grid-cols-4 gap-4'>
           {Object.values(dacomp).map((topic, idx) => (
 
             <Tab.Panel
@@ -98,7 +108,7 @@ const AboutChild = () => {
                 'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
               )}
             >
-              <div className="h-[400px] flex flex-wrap">
+              <div className="h-screen w-[700px] flex flex-wrap">
               {Array.isArray(topic) ? (
                 topic.map((member) => (
                 <MemberCard key={member.id} member={member} />
@@ -113,6 +123,7 @@ const AboutChild = () => {
               </div>
             </Tab.Panel>
           ))}
+          </div>
         </Tab.Panels>
       </Tab.Group>
     </div>
