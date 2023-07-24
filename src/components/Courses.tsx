@@ -45,7 +45,7 @@ const ChildCourses = ({ updateBgState }) => {
         title: 'Engenharia de Computação',
         content: 'Procurando propiciar a formação de profissionais altamente qualificados, o curso de Engenharia de Computação da Universidade Federal de Itajubá vem sofrendo alterações ao longo dos anos até mesmo para atender a Lei das Diretrizes e Bases da Educação no Brasil (LDB) e a Proposta de Diretrizes Curriculares de Cursos da Área de Computação e Informática.',
         link: 'https://prg.unifei.edu.br/cursos/engenharia-de-computacao/',
-        color: 'bg-gradient-to-r from-black from-10% to-engenharia-light-orange'
+        color: 'bg-gradient-to-r from-black from-10% to-engenharia-orange'
      }
     ],
     SIN: [
@@ -54,7 +54,7 @@ const ChildCourses = ({ updateBgState }) => {
         title: 'Sistemas de Informação',
         content: 'Os últimos anos, a utilização de sistemas de informação como fator competitivo tornou-se uma realidade. Tal fato criou uma demanda crescente por profissionais habilitados a desenvolver e gerenciar tais sistemas. Por se tratarem de sistemas complexos e altamente especializados, os profissionais egressos de cursos de ciência ou engenharia de computação, os quais oferecem formação mais ampla e diversificada, precisam de formação complementar para lidar com as especificidades dos sistemas de informação.',
         link: 'https://prg.unifei.edu.br/cursos/sistemas-de-informacao/',
-        color: 'bg-gradient-to-r from-black from-10% to-red-900'
+        color: 'bg-gradient-to-r from-black from-10% to-sistema-red'
       }
     ],
   });
