@@ -18,12 +18,12 @@ const Courses = () => {
           <h3 className='text-center text-4xl text-white font-bold drop-shadow-lg p-16' id='Courses'>Cursos</h3>
         </div>
 
-        <ChildCourses updateBgState={updateBgState}/>
+        <CoursesChild updateBgState={updateBgState}/>
       </div>
 
 )};
 
-const ChildCourses = ({ updateBgState }) => {
+const CoursesChild = ({ updateBgState }) => {
 
   const handleTabClick = (color: string) => {
     updateBgState(color)
