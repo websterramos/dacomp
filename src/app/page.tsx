@@ -1,7 +1,8 @@
-import Writer  from '../components/Writer'
 import Image from 'next/image'
-import ButtonDown  from '../components/ButtonDown'
-import Courses from '../components/Courses'
+import Writer  from '@/components/Writer'
+import ButtonDown  from '@/components/ButtonDown'
+import Courses from '@/components/Courses'
+import About from '@/components/About'
 
 export default function Home() {
   return (
@@ -34,6 +35,8 @@ export default function Home() {
       </section>
 
       <Courses/>
+
+      <About/>
     </main>
   )
 }
