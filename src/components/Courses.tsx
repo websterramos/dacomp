@@ -54,7 +54,7 @@ const ChildCourses = ({ updateBgState }) => {
         title: 'Sistemas de Informação',
         content: 'Os últimos anos, a utilização de sistemas de informação como fator competitivo tornou-se uma realidade. Tal fato criou uma demanda crescente por profissionais habilitados a desenvolver e gerenciar tais sistemas. Por se tratarem de sistemas complexos e altamente especializados, os profissionais egressos de cursos de ciência ou engenharia de computação, os quais oferecem formação mais ampla e diversificada, precisam de formação complementar para lidar com as especificidades dos sistemas de informação.',
         link: 'https://prg.unifei.edu.br/cursos/sistemas-de-informacao/',
-        color: 'bg-gradient-to-r from-black from-10% to-sistema-red'
+        color: 'bg-gradient-to-r from-black from-10% to-sistemas-red'
       }
     ],
   });
