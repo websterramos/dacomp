@@ -5,7 +5,7 @@ import { Tab } from '@headlessui/react'
 import classNames from '../utils/classesUtil'
 
 const Courses = () => {
-  const [bgState, setBgState] = useState('bg-gradient-to-r from-black from-10% to-dark-blue');
+  const [bgState, setBgState] = useState('bg-gradient-to-r from-black from-10% to-light-blue');
 
   const updateBgState = (color: string) => {
     setBgState(color)
@@ -81,17 +81,19 @@ return (
 
         <Tab.Panels className="mt-2 shadow">
           {Object.values(courses).map((course) => (
-            <Tab.Panel
+            <a href={course[0].link} >
+              <Tab.Panel
               className={classNames(
                 'rounded-xl w-max  p-3 ',
-                'ring-transparent ring-opacity-100 ring-offset-2  focus:outline-none focus:ring-2'
+                'ring-transparent ring-opacity-100 ring-offset-2 hover:scale-105 focus:outline-none focus:ring-2'
               )}
             >
                 <div key={course[0].id}>
-                  <h3 className="flex justify-center text-white font-medium leading-5">{course[0].title}</h3>
-                  <p className="text-justify text-white text-lg max-w-lg">{course[0].content}</p>
+                  <h3 className="flex justify-center text-white font-medium leading-5 text-2xl">{course[0].title}</h3>
+                  <p className="text-justify text-white text-lg max-w-lg py-2">{course[0].content}</p>
                 </div>
-            </Tab.Panel>
+              </Tab.Panel>
+            </a>
           ))}
         </Tab.Panels>
       </Tab.Group>
