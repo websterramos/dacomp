@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import { Tab } from '@headlessui/react';
-import classNames from '../utils/classesUtil'
+import classNames from '@/utils/classesUtil'
+import { Member } from './MemberCard'
+import MemberCard from './MemberCard'
 
 const About = () => {
 
@@ -19,7 +21,20 @@ const About = () => {
 
 const AboutChild = () => {
 
-  let [dacomp] = useState({
+  let [dacomp] = useState<{
+    Sobre: {
+      title: string;
+      content: string;
+    };
+
+    Objetivo: {
+      title: string;
+      content: string;
+    };
+
+    Membros: Member[];
+  }>({
+
     Sobre: {
       id: 0,
       title: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.',
@@ -33,12 +48,24 @@ const AboutChild = () => {
     },
 
     Membros: [{
-      id: 2,
-      title: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.',
-      content: 'Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.'
+      id: 0,
+      name: 'Ana',
+      course: 'CCO',
+      phrase: 'nada me faltara',
+      photo: '/membros/Ana.jpg',
+      link: '#'
+      },
+      
+      {
+      id: 1,
+      name: 'Theo',
+      course: 'SIN',
+      phrase: 'nada me faltara',
+      photo: '',
+      link: '#'
       }
     ]
-  })
+  });
 
   return (
     <div className="max-w-md px-2 py-16 sm:px-0">
@@ -65,19 +92,21 @@ const AboutChild = () => {
           {Object.values(dacomp).map((topic, idx) => (
 
             <Tab.Panel
+              key={idx}
               className={classNames(
                 'rounded-xl bg-white p-3',
                 'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
               )}
             >
-              <div className="h-[400px] ">
+              <div className="h-[400px] flex flex-wrap">
               {Array.isArray(topic) ? (
-                // renderiza componentes de Membros
-                <h1> So membro brabo</h1>
+                topic.map((member) => (
+                <MemberCard key={member.id} member={member} />
+                ))
               ) : (
                 <div>
                   <h1>{topic.title}</h1>
-                  <p className='break-all'>{topic.content}</p>
+                  <p>{topic.content}</p>
                 </div>
 
               )}
