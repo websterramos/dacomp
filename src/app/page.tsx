@@ -1,26 +1,39 @@
-import Writer  from '../app/Writer'
-import ButtonDown  from '../app/ButtonDown'
-
+import Writer  from '../components/Writer'
+import Image from 'next/image'
+import ButtonDown  from '../components/ButtonDown'
+import Courses from '../components/Courses'
 
 export default function Home() {
   return (
     <main>
       <section>
-          <header className="w-full flex flex-col items-center justify-center h-[36rem] bg-gradient-to-r from-dark-blue to-light-blue ">
-            <div className="flex flex-col align-center justify-center items-center p-16">
-              <h1 className=" text-center text-5xl text-white font-bold drop-shadow-lg">Bem-vind@ ao 
-                <span className="text-cyan-900"> DACOMP</span>
+          <header className="w-full flex flex-col justify-evenly h-[35rem]  bg-gradient-to-r from-black from-10% to-light-blue ">
+            <div className='flex md:justify-evenly  justify-center'>
+            <div className="flex flex-col justify-center items-center p-16">
+              <h1 className="text-center text-4xl text-cyan-700 font-bold drop-shadow-lg">Bem-vind@ ao 
+                <span className="text-white"> DACOMP</span>
               </h1>
               <Writer/>
             </div>
-          <ButtonDown/>  
-          </header>
-          
-        <div className="container p-20" id='Cursos'>
-          <h1 className="text-4xl">Other Content</h1>
+
+            <Image className=' hidden md:block'
+              src={'/logo.png'}
+              alt='Logo da Dacomp'
+              width={500}
+              height={600}
+              priority
+            />
+
+          </div>
+        
+        <div className='flex justify-center items-center'>
+          <ButtonDown/>
         </div>
 
+        </header>
       </section>
+
+      <Courses/>
     </main>
   )
 }
