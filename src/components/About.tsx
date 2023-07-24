@@ -7,15 +7,13 @@ import classNames from '../utils/classesUtil'
 const About = () => {
 
   return (
-      <div className={'flex-col' }>
+      <div className='flex flex-col items-center justify-center h-screen'>
         <div className='flex justify-center items-center'>
-          <h3 className='text-center text-4xl text-white font-bold drop-shadow-lg p-16' id='Courses'>Sobre</h3>
+          <h3 className='text-center text-4xl text-white font-bold drop-shadow-lg p-16' id='About'>Sobre</h3>
         </div>
 
-        <AboutChild/>
+      <AboutChild/>
       </div>
-
-
   )
 }
 
@@ -43,7 +41,7 @@ const AboutChild = () => {
   })
 
   return (
-    <div className="flex-col justify-center w-full max-w-md px-2 py-16 sm:px-0">
+    <div className="max-w-md px-2 py-16 sm:px-0">
       <Tab.Group>
         <Tab.List className="flex space-x-1 rounded-xl p-1">
           {Object.keys(dacomp).map((topic) => (
@@ -72,16 +70,18 @@ const AboutChild = () => {
                 'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
               )}
             >
+              <div className="h-[400px] ">
               {Array.isArray(topic) ? (
                 // renderiza componentes de Membros
                 <h1> So membro brabo</h1>
               ) : (
                 <div>
                   <h1>{topic.title}</h1>
-                  <p>{topic.content}</p>
+                  <p className='break-all'>{topic.content}</p>
                 </div>
 
               )}
+              </div>
             </Tab.Panel>
           ))}
         </Tab.Panels>
