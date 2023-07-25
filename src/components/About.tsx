@@ -63,6 +63,16 @@ const AboutChild = () => {
       phrase: 'nada me faltara',
       photo: '/membros/Theo.jpg',
       link: '#'
+      },
+  
+      {
+      id: 3,
+      name: 'Hellen',
+      course: 'ECO',
+      position: 'Sla',
+      phrase: 'nada me faltara',
+      photo: '/membros/Theo.jpg',
+      link: '#'
       }
     ]
   });
@@ -98,10 +108,10 @@ const AboutChild = () => {
                 'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
               )}
             >
-              <div className="h-[450px] w-[700px] flex flex-wrap">
+              <div className="h-screen w-full md:h-[450px] md:w-[700px] container">
               {Array.isArray(topic) ? (
                 topic.map((member) => (
-                <div className=''>
+                <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                   <MemberCard key={member.id} member={member} />
                 </div>
                 ))
