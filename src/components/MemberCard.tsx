@@ -19,7 +19,7 @@ const courseColors: { [key: string]: string} = {
 }
 
 const MemberCard: React.FC<{ member: Member }> = ({ member }) => {
-  const { id, photo, name, course, link, phrase } = member;
+  const { id, photo, name, course, position, link, phrase } = member;
   const borderColor = courseColors[course];
 
   return (
@@ -31,7 +31,7 @@ const MemberCard: React.FC<{ member: Member }> = ({ member }) => {
           className="w-16 h-16 object-cover rounded-full mx-auto mb-4"
         />
         <h2 className="text-sm font-semibold">{name}</h2>
-        <p className="text-gray-500 text-sm mb-2">{course}</p>
+        <p className="text-gray-500 text-sm mb-2">{course} | {position}</p>
         <p className="text-sm italic">"{phrase}"</p>
       </a>
     </div>
