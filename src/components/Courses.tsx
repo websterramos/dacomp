@@ -61,9 +61,9 @@ const CoursesChild = ({ updateBgState }) => {
 
 
 return (
-    <div className="flex justify-center space-x-10 py-10 sm:px-0">
+    <div className="flex flex-col lg:flex-row items-center justify-center space-x-10 py-10 sm:px-0">
       <Tab.Group>
-        <Tab.List className="flex flex-col justify-between w-max rounded-xl p-1">
+        <Tab.List className="flex  justify-between lg:flex-col w-max rounded-xl gap-4 p-6">
           {Object.keys(courses).map((course) => (
             <Tab
               key={course}
@@ -71,7 +71,7 @@ return (
               className={({ selected }) =>
                 classNames(
                   'w-full block  rounded-lg py-2.5 text-white font-semibold leading-5 text-2xl',
-                  'ring-transparent ring-opacity-60 ring-offset-2  focus:outline-none focus:ring-2', selected ? 'bg-transparent' : 'text-blue-100 hover:bg-white/[0.12] hover:text-white')
+                  'ring-transparent ring-opacity-60 ring-offset-2  focus:outline-none focus:ring-2', selected ? 'bg-neutral-300/50' : 'text-blue-100 hover:bg-white/[0.12] hover:text-white')
               }
             >
               {course}
