@@ -2,42 +2,83 @@
 
 import { useState } from "react";
 import { Tab } from '@headlessui/react';
-import classNames from '../utils/classesUtil'
+import classNames from '@/utils/classesUtil'
+import { Member } from './MemberCard'
+import MemberCard from './MemberCard'
 
 const About = () => {
 
   return (
       <div className={'flex flex-col items-center justify-center h-screen' }>
         <div className='flex justify-center items-center'>
-          <h3 className='text-center text-4xl text-white font-bold drop-shadow-lg p-16' id='Courses'>Sobre</h3>
+          <h3 className='text-center text-4xl text-white font-bold drop-shadow-lg p-16' id='About'>Sobre</h3>
         </div>
 
-        <AboutChild/>
+      <AboutChild/>
       </div>
-
-
   )
 }
 
 const AboutChild = () => {
 
-  let [dacomp] = useState({
+  let [dacomp] = useState<{
     Sobre: {
-      id: 0,
+      title: string;
+      content: string;
+    };
+
+    Membros: Member[];
+  }>({
+
+    Sobre: {
       title: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.',
       content: 'Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.'
     },
 
     Membros: [{
+      id: 0,
+      name: 'Ana',
+      course: 'CCO',
+      position: 'Diretora',
+      phrase: 'nada me faltara',
+      photo: '/membros/Ana.jpg',
+      link: '#'
+      },
+      
+      {
+      id: 1,
+      name: 'Theo',
+      course: 'SIN',
+      position: 'Marketing',
+      phrase: 'nada me faltara',
+      photo: '/membros/Theo.jpg',
+      link: '#'
+      },
+      
+      {
       id: 2,
-      title: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.',
-      content: 'Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.'
+      name: 'Mario',
+      course: 'ECO',
+      position: 'Sla',
+      phrase: 'nada me faltara',
+      photo: '/membros/Theo.jpg',
+      link: '#'
+      },
+  
+      {
+      id: 3,
+      name: 'Hellen',
+      course: 'ECO',
+      position: 'Sla',
+      phrase: 'nada me faltara',
+      photo: '/membros/Theo.jpg',
+      link: '#'
       }
     ]
-  })
+  });
 
   return (
-    <div className="flex-col justify-center w-full max-w-md px-2 py-16 sm:px-0">
+    <div className="max-w-md px-2 py-16 sm:px-0">
       <Tab.Group>
         <Tab.List className="flex space-x-1 rounded-xl p-1">
           {Object.keys(dacomp).map((topic) => (
@@ -61,21 +102,27 @@ const AboutChild = () => {
           {Object.values(dacomp).map((topic, idx) => (
 
             <Tab.Panel
+              key={idx}
               className={classNames(
                 'rounded-xl bg-white p-3',
                 'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
               )}
             >
+              <div className="h-screen w-full md:h-[450px] md:w-[700px] container">
               {Array.isArray(topic) ? (
-                // renderiza componentes de Membros
-                <h1> So membro brabo</h1>
+                topic.map((member) => (
+                <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+                  <MemberCard key={member.id} member={member} />
+                </div>
+                ))
               ) : (
-                <div>
+                <div className='max-w-[400px] overflow-x-auto'>
                   <h1>{topic.title}</h1>
-                  <p>{topic.content}</p>
+                  <p className="text-justify">{topic.content}</p>
                 </div>
 
               )}
+              </div>
             </Tab.Panel>
           ))}
         </Tab.Panels>

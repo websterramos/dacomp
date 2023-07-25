@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main>
       <section>
-          <header className="w-full flex flex-col justify-evenly items-center gap-7 h-[35rem]  bg-gradient-to-r from-black from-10% to-light-blue ">
+          <header className="w-full flex flex-col justify-evenly h-[35rem]">
             <div className='flex md:justify-evenly  justify-center'>
             <div className="flex flex-col justify-center items-center p-16">
               <h1 className="text-center text-4xl text-cyan-700 font-bold drop-shadow-lg">Bem-vind@ ao 
