@@ -27,22 +27,10 @@ const AboutChild = () => {
       content: string;
     };
 
-    Objetivo: {
-      title: string;
-      content: string;
-    };
-
     Membros: Member[];
   }>({
 
     Sobre: {
-      id: 0,
-      title: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.',
-      content: 'Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.'
-    },
-
-    Objetivo: {
-      id: 1,
       title: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.',
       content: 'Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.'
     },
@@ -51,6 +39,7 @@ const AboutChild = () => {
       id: 0,
       name: 'Ana',
       course: 'CCO',
+      position: 'Diretora',
       phrase: 'nada me faltara',
       photo: '/membros/Ana.jpg',
       link: '#'
@@ -60,6 +49,7 @@ const AboutChild = () => {
       id: 1,
       name: 'Theo',
       course: 'SIN',
+      position: 'Marketing',
       phrase: 'nada me faltara',
       photo: '/membros/Theo.jpg',
       link: '#'
@@ -67,8 +57,9 @@ const AboutChild = () => {
       
       {
       id: 2,
-      name: 'Enzo',
+      name: 'Mario',
       course: 'ECO',
+      position: 'Sla',
       phrase: 'nada me faltara',
       photo: '/membros/Theo.jpg',
       link: '#'
@@ -98,7 +89,6 @@ const AboutChild = () => {
         </Tab.List>
 
         <Tab.Panels className='mt-2'>
-          <div className='grid grid-cols-4 gap-4'>
           {Object.values(dacomp).map((topic, idx) => (
 
             <Tab.Panel
@@ -108,22 +98,23 @@ const AboutChild = () => {
                 'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
               )}
             >
-              <div className="h-screen w-[700px] flex flex-wrap">
+              <div className="h-[450px] w-[700px] flex flex-wrap">
               {Array.isArray(topic) ? (
                 topic.map((member) => (
-                <MemberCard key={member.id} member={member} />
+                <div className=''>
+                  <MemberCard key={member.id} member={member} />
+                </div>
                 ))
               ) : (
-                <div>
+                <div className='max-w-[400px] overflow-x-auto'>
                   <h1>{topic.title}</h1>
-                  <p>{topic.content}</p>
+                  <p className="text-justify">{topic.content}</p>
                 </div>
 
               )}
               </div>
             </Tab.Panel>
           ))}
-          </div>
         </Tab.Panels>
       </Tab.Group>
     </div>

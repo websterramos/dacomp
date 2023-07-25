@@ -7,6 +7,7 @@ export type Member = {
   photo: string;
   name: string;
   course: string;
+  position: string;
   link: string;
   phrase: string;
 };
@@ -22,7 +23,7 @@ const MemberCard: React.FC<{ member: Member }> = ({ member }) => {
   const borderColor = courseColors[course];
 
   return (
-    <div className={`p-4 bg-white rounded-lg shadow-md hover:ring-1 overflow-hidden hover:${borderColor} max-h-[11rem] hover:scale-105`}>
+    <div className={`p-4 bg-white rounded-lg shadow-md ${borderColor} max-h-[11rem] hover:scale-105`}>
       <a href={link} target="_blank" rel="noopener noreferrer">
         <img
           src={photo}
