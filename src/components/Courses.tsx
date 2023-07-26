@@ -79,7 +79,7 @@ return (
           ))}
         </Tab.List>
 
-        <Tab.Panels className="mt-2 shadow h-[350px]">
+        <Tab.Panels className="flex justify-center items-center  shadow h-[500px] w-[360px] md:h-[350px]">
           {Object.values(courses).map((course) => (
             <a href={course[0].link} >
               <Tab.Panel
@@ -88,9 +88,9 @@ return (
                 'ring-transparent ring-opacity-100 ring-offset-2 hover:scale-105 focus:outline-none focus:ring-2'
               )}
             >
-                <div key={course[0].id}>
-                  <h3 className="flex justify-center text-white font-medium leading-5 text-2xl">{course[0].title}</h3>
-                  <p className="text-justify text-white text-lg max-w-sm align-middle lg:max-w-lg py-2">{course[0].content}</p>
+                <div key={course[0].id} className='flex flex-col justify-center items-center'>
+                  <h3 className="text-white font-medium leading-5 text-2xl">{course[0].title}</h3>
+                  <p className=" text-justify text-white text-lg max-w-[300px] md:max-w-md align-middle lg:max-w-lg py-4">{course[0].content}</p>
                 </div>
               </Tab.Panel>
             </a>
