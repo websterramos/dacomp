@@ -63,7 +63,7 @@ const CoursesChild = ({ updateBgState }) => {
 return (
     <div className="flex flex-col lg:flex-row items-center justify-center space-x-10 py-10 sm:px-0">
       <Tab.Group>
-        <Tab.List className="flex  justify-between lg:flex-col w-max rounded-xl gap-4 p-6">
+        <Tab.List className="flex  justify-between lg:flex-col w-max  rounded-xl gap-4 p-6">
           {Object.keys(courses).map((course) => (
             <Tab
               key={course}
@@ -79,7 +79,7 @@ return (
           ))}
         </Tab.List>
 
-        <Tab.Panels className="mt-2 shadow">
+        <Tab.Panels className="mt-2 shadow h-[350px]">
           {Object.values(courses).map((course) => (
             <a href={course[0].link} >
               <Tab.Panel
@@ -90,7 +90,7 @@ return (
             >
                 <div key={course[0].id}>
                   <h3 className="flex justify-center text-white font-medium leading-5 text-2xl">{course[0].title}</h3>
-                  <p className="text-justify text-white text-lg max-w-lg py-2">{course[0].content}</p>
+                  <p className="text-justify text-white text-lg max-w-sm align-middle lg:max-w-lg py-2">{course[0].content}</p>
                 </div>
               </Tab.Panel>
             </a>
