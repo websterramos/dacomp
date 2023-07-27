@@ -3,6 +3,8 @@ import Writer from "@/components/Writer";
 import ButtonDown from "@/components/ButtonDown";
 import Courses from "@/components/Courses";
 import About from "@/components/About";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
   return (
@@ -37,6 +39,48 @@ export default function Home() {
       <Courses />
 
       <About />
+
+      <section id="contato" className="bg-dark-gray text-white">
+        <div className="flex w-full flex-col items-center justify-center gap-16 px-4 py-16">
+          <h3 className="text-4xl font-bold drop-shadow-lg">Contato</h3>
+
+          <div className="flex flex-col gap-16 md:flex-row md:justify-between md:gap-64">
+            <div className="items flex flex-col justify-between gap-4">
+              <div className="flex flex-col items-center gap-8">
+                <h3 className="text-2xl font-bold">E-mail</h3>
+                <div className="flex flex-col gap-3">
+                  <div className="flex flex-col text-xl">
+                    <span className="font-bold text-blue-600">Dacomp</span>
+                    <a href="mailto:contato@email.com">contato@email.com</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="items flex flex-col justify-between gap-4">
+              <div className="flex flex-col items-center gap-8">
+                <h3 className="text-2xl font-bold">Redes Sociais</h3>
+                <div className="flex items-center justify-between gap-12">
+                  <a
+                    href="https://www.instagram.com/dacompunifei/"
+                    target="__blank"
+                    rel="noopener"
+                  >
+                    <FontAwesomeIcon icon={faInstagram} size="2xl" />
+                  </a>
+
+                  <a
+                    href="https://www.facebook.com/DacompUNIFEI"
+                    target="__blank"
+                    rel="noopener"
+                  >
+                    <FontAwesomeIcon icon={faFacebook} size="2xl" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
