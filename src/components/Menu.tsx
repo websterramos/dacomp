@@ -3,7 +3,7 @@ import React from "react";
 const Menu = () => {
   return (
     <div>
-      <nav className="flex flex-col justify-between gap-8 p-4 lg:flex-row lg:items-center">
+      <nav className="flex flex-col justify-between gap-8 p-4 md:flex-row md:items-center">
         <a className="hover:text-blue-400" href="#cursos">
           Cursos
         </a>
