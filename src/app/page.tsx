@@ -3,6 +3,7 @@ import Writer from "@/components/Writer";
 import ButtonDown from "@/components/ButtonDown";
 import Courses from "@/components/Courses";
 import About from "@/components/About";
+import QuestionResponse from "@/components/QuestionResponse";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 
@@ -78,6 +79,23 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="bg-dark-gray text-white">
+        <div className="flex w-full flex-col items-center justify-center gap-16 px-4 py-16">
+          <h3 className="text-4xl font-bold drop-shadow-lg">FAQ</h3>
+
+          <div className="mx-auto flex max-w-full flex-col items-center justify-center rounded-2xl bg-white p-2 md:max-w-xl">
+            <QuestionResponse
+              question="Como interpretar horários no SIGAA?"
+              response="O primeiro número representa o dia da semana, a letra significa o período do dia e os demais números diz respeito as respectivas aulas."
+            />
+            <QuestionResponse
+              question="Como consultar turmas do próximo semestre?"
+              response="Abra a guia"
+            />
           </div>
         </div>
       </section>
