@@ -23,7 +23,7 @@ const MemberCard: React.FC<{ member: Member }> = ({ member }) => {
   const borderColor = courseColors[course];
 
   return (
-    <div className={`p-3 bg-white rounded-lg shadow-md ${borderColor} max-h-[13rem] max-w-[10rem] hover:scale-105`}>
+    <div className={` bg-white rounded-lg shadow-md ${borderColor} max-h-[13rem] max-w-[10rem] hover:scale-105`}>
       <a href={link} target="_blank" rel="noopener noreferrer">
         <img
           src={photo}

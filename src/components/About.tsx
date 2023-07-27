@@ -9,7 +9,7 @@ import MemberCard from './MemberCard'
 const About = () => {
 
   return (
-      <div className={'flex flex-col items-center justify-center h-screen' }>
+      <div className={'flex flex-col items-center justify-center p-4' }>
         <div className='flex justify-center items-center'>
           <h3 className='text-center text-4xl text-white font-bold drop-shadow-lg p-16' id='About'>Sobre</h3>
         </div>
@@ -86,7 +86,7 @@ const AboutChild = () => {
               key={topic}
               className={({ selected }) => 
                 classNames(
-                  'w-full rounded-lg py-2.5 text-sm font-medium leading-5',
+                  'w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-md',
                   'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
                   selected
                     ? 'bg-white shadow'
@@ -99,33 +99,32 @@ const AboutChild = () => {
         </Tab.List>
 
         <Tab.Panels className='mt-2'>
-          {Object.values(dacomp).map((topic, idx) => (
-
-            <Tab.Panel
-              key={idx}
-              className={classNames(
-                'rounded-xl bg-white p-3',
-                'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
-              )}
-            >
-              <div className="h-screen w-full md:h-[450px] md:w-[700px] container">
-              {Array.isArray(topic) ? (
-                topic.map((member) => (
-                <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-                  <MemberCard key={member.id} member={member} />
-                </div>
-                ))
-              ) : (
-                <div className='max-w-[400px] overflow-x-auto'>
-                  <h1>{topic.title}</h1>
-                  <p className="text-justify">{topic.content}</p>
-                </div>
-
-              )}
-              </div>
-            </Tab.Panel>
-          ))}
-        </Tab.Panels>
+          
+<div className="h-screen w-full container m-auto md:w-[400px]">
+    {Object.values(dacomp).map((topic, idx) => (
+      <Tab.Panel
+        key={idx}
+        className={classNames(
+          'rounded-xl bg-white p-3',
+          'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
+        )}
+      >
+        {Array.isArray(topic) ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {topic.map((member) => (
+              <MemberCard key={member.id} member={member} />
+            ))}
+        </div>
+        ) : (
+          <div className='max-w-[400px] overflow-x-auto'>
+            <h1>{topic.title}</h1>
+            <p className="text-justify">{topic.content}</p>
+          </div>
+        )}
+      </Tab.Panel>
+    ))}
+</div>
+       </Tab.Panels>
       </Tab.Group>
     </div>
   )
