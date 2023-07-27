@@ -100,7 +100,7 @@ const AboutChild = () => {
 
         <Tab.Panels className='mt-2'>
           
-<div className="h-screen w-full container m-auto md:w-[400px]">
+<div className="h-screen w-full container m-auto md:w-[350px] lg:w-[550px]">
     {Object.values(dacomp).map((topic, idx) => (
       <Tab.Panel
         key={idx}
@@ -110,13 +110,13 @@ const AboutChild = () => {
         )}
       >
         {Array.isArray(topic) ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {topic.map((member) => (
               <MemberCard key={member.id} member={member} />
             ))}
         </div>
         ) : (
-          <div className='max-w-[400px] overflow-x-auto'>
+          <div className='max-w-[550px] overflow-x-auto'>
             <h1>{topic.title}</h1>
             <p className="text-justify">{topic.content}</p>
           </div>
