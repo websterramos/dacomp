@@ -69,7 +69,7 @@ return (
     <div className="flex flex-col lg:flex-row items-center justify-center space-x-10 py-10 gap-12 sm:px-0">
       <Tab.Group>
         <Tab.List className="flex  justify-between lg:flex-col w-max  rounded-xl gap-4 p-6">
-          {Object.keys(courses).map((course) => (
+            {Object.keys(courses).map((course) => (
             <Tab
               key={course}
               onClick={() => handleTabClick(courses[course][0].color)}
@@ -84,7 +84,7 @@ return (
           ))}
         </Tab.List>
 
-        <Tab.Panels className="flex justify-center items-center  shadow h-[500px] w-[360px] md:h-[350px]">
+        <Tab.Panels className="flex h-[500px] w-[360px]  items-center justify-center shadow md:h-[350px]">
           {Object.values(courses).map((course) => (
             <a href={course[0].link}>
               <Tab.Panel

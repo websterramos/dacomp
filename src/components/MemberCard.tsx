@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import React from 'react';
+import React from "react";
 
 export type Member = {
   course: string;
@@ -11,11 +11,11 @@ export type Member = {
   name: string;
 };
 
-const courseColors: { [key: string]: string} = {
-  'CCO': 'border-blue-500',
-  'ECO': 'border-purple-500',
-  'SIN': 'border-red-500'
-}
+const courseColors: { [key: string]: string } = {
+  CCO: "border-blue-500",
+  ECO: "border-purple-500",
+  SIN: "border-red-500",
+};
 
 const MemberCard: React.FC<{ member: Member }> = ({ member }) => {
   const {photo, name, course, role, link, phrase } = member;
@@ -27,7 +27,7 @@ const MemberCard: React.FC<{ member: Member }> = ({ member }) => {
         <img
           src={photo}
           alt={name}
-          className="w-16 h-16 object-cover rounded-full mx-auto mb-4"
+          className="mx-auto mb-4 h-16 w-16 rounded-full object-cover"
         />
         <h2 className="flex justify-center text-sm font-semibold">{name}</h2>
         <p className=" text-gray-500 text-sm mb-2">{course} | {role}</p>
@@ -35,6 +35,6 @@ const MemberCard: React.FC<{ member: Member }> = ({ member }) => {
       </a>
     </div>
   );
-}
+};
 
 export default MemberCard;
