@@ -2,7 +2,9 @@ import Image from "next/image";
 import Writer from "@/components/Writer";
 import ButtonDown from "@/components/ButtonDown";
 import Courses from "@/components/Courses";
+import EventButton from "@/components/EventButton";
 import About from "@/components/About";
+import Email from "@/components/Email";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import QuestionResponse from "@/components/QuestionResponse";
@@ -39,43 +41,88 @@ export default function Home() {
 
       <Courses />
 
+      <section id="eventos" className="text-white">
+        <div
+          id="events-section"
+          className="flex min-h-screen w-full flex-col items-center justify-center gap-16 px-4 py-16"
+        >
+          <h3 className="text-center text-4xl font-bold drop-shadow-lg">
+            Eventos
+          </h3>
+
+          <div className="flex flex-col gap-16 md:flex-row">
+            <EventButton event="Festas" />
+            <EventButton event="Acadêmicos" />
+          </div>
+        </div>
+      </section>
+
       <About />
 
-      <section id="contato" className="bg-dark-gray text-white">
-        <div className="flex w-full flex-col items-center justify-center gap-16 px-4 py-16">
+      <section id="contato" className="text-white">
+        <div
+          id="contact-section"
+          className="flex min-h-screen w-full flex-col items-center justify-center gap-16 px-4 py-16"
+        >
           <h3 className="text-4xl font-bold drop-shadow-lg">Contato</h3>
 
-          <div className="flex flex-col gap-16 md:flex-row md:justify-between md:gap-64">
-            <div className="items flex flex-col justify-between gap-4">
-              <div className="flex flex-col items-center gap-8">
+          <div
+            id="contact-div"
+            className="flex flex-col gap-8 md:flex-row md:justify-center md:gap-64"
+          >
+            <div
+              id="email-div"
+              className="items flex max-w-full flex-col justify-between gap-4 rounded-2xl bg-dark-gray p-4 drop-shadow-md"
+            >
+              <div id="email-part" className="flex flex-col items-center gap-8">
                 <h3 className="text-2xl font-bold">E-mail</h3>
-                <div className="flex flex-col gap-3">
-                  <div className="flex flex-col text-xl">
-                    <span className="font-bold text-blue-600">Dacomp</span>
-                    <a href="mailto:contato@email.com">contato@email.com</a>
-                  </div>
+                <div className="flex w-full flex-col items-center justify-center gap-3 md:grid md:grid-cols-2">
+                  <Email name="DACOMP" email="dacomp@unifei.edu.br" />
+                  <Email name="Presidente" email="dacomp@unifei.edu.br" />
+                  <Email name="Vice-presidente" email="dacomp@unifei.edu.br" />
                 </div>
               </div>
             </div>
-            <div className="items flex flex-col justify-between gap-4">
-              <div className="flex flex-col items-center gap-8">
-                <h3 className="text-2xl font-bold">Redes Sociais</h3>
-                <div className="flex items-center justify-between gap-12">
-                  <a
-                    href="https://www.instagram.com/dacompunifei/"
-                    target="__blank"
-                    rel="noopener"
-                  >
-                    <FontAwesomeIcon icon={faInstagram} size="2xl" />
-                  </a>
 
-                  <a
-                    href="https://www.facebook.com/DacompUNIFEI"
-                    target="__blank"
-                    rel="noopener"
-                  >
-                    <FontAwesomeIcon icon={faFacebook} size="2xl" />
-                  </a>
+            <div
+              id="socials-div"
+              className="items flex h-fit max-w-full flex-col justify-between gap-4 rounded-2xl bg-dark-gray p-4 drop-shadow-md"
+            >
+              <div
+                id="socials-part"
+                className="flex flex-col items-center gap-8"
+              >
+                <h3 className="text-2xl font-bold">Redes Sociais</h3>
+
+                <div
+                  id="socials"
+                  className="flex w-full flex-col items-center justify-center gap-3"
+                >
+                  <div className="w-full rounded-lg bg-gray-800 p-2 hover:text-blue-600 focus:text-blue-600">
+                    <a
+                      href="https://www.instagram.com/dacompunifei/"
+                      target="__blank"
+                      rel="noopener"
+                    >
+                      <button className="flex w-full items-center justify-center gap-4">
+                        <span className="font-medium">Instagram</span>
+                        <FontAwesomeIcon icon={faInstagram} size="lg" />
+                      </button>
+                    </a>
+                  </div>
+
+                  <div className="w-full rounded-lg bg-gray-800 p-2 hover:text-blue-600 focus:text-blue-600">
+                    <a
+                      href="https://www.facebook.com/DacompUNIFEI"
+                      target="__blank"
+                      rel="noopener"
+                    >
+                      <button className="flex w-full items-center justify-center gap-4">
+                        <span className="font-medium">Facebook</span>
+                        <FontAwesomeIcon icon={faFacebook} size="lg" />
+                      </button>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

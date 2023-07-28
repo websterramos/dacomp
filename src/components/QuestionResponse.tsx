@@ -15,7 +15,7 @@ const QuestionReponse = ({ question, response }: IProps) => {
     <Disclosure>
       {({ open }) => (
         <>
-          <Disclosure.Button className="flex w-full items-center justify-between gap-4 p-2 px-4 py-2 font-semibold text-black">
+          <Disclosure.Button className="flex w-full items-center justify-between gap-4 p-2 px-4 py-2 font-semibold text-white">
             <span className={`${open ? "text-blue-600" : ""} `}>
               {question}
             </span>
@@ -28,7 +28,7 @@ const QuestionReponse = ({ question, response }: IProps) => {
               icon={faMinus}
             />
           </Disclosure.Button>
-          <Disclosure.Panel className="flex w-full items-center justify-center px-4 py-2 text-black">
+          <Disclosure.Panel className="flex w-full items-center justify-center px-4 py-2 text-white">
             <p className="text-justify">{response}</p>
           </Disclosure.Panel>
         </>
