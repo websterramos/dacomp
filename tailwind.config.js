@@ -11,7 +11,7 @@ module.exports = {
         'dark-blue': '#2D3E51',
         'light-blue': '#407BBC',
         'dark-gray':  '#0D1117',
-        'dacomp-dark-blue': '#003153',
+        'dacomp-dark-blue': '#003154',
         'dacomp-light-blue': '#005296',
         'engenharia-orange': '#e47705',
         'sistemas-red': '#ff0600'

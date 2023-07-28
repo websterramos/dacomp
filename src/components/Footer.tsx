@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="flex justify-center bg-dark-gray text-white">
-      <div className="flex w-full max-w-7xl flex-col items-center justify-center px-4 py-4 lg:flex-row lg:gap-6">
+      <div className="flex w-full max-w-7xl flex-col items-center justify-center px-4 py-4 md:flex-row md:gap-6">
         <picture>
           <img
             className="w-64"
@@ -13,7 +13,7 @@ const Footer = () => {
         </picture>
 
         <div className="flex flex-col items-center justify-center gap-6 py-6">
-          <div className="flex flex-col items-center justify-center lg:items-start">
+          <div className="flex flex-col items-center justify-center md:items-start">
             <h2 className="text-center text-lg font-bold uppercase">
               Diretório Acadêmico de Computação
             </h2>
