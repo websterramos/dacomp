@@ -20,10 +20,6 @@ const Menu = () => {
           Sobre
         </a>
 
-        <a className="hover:text-blue-400" href="#contato">
-          Contato
-        </a>
-
         <a className="hover:text-blue-400" href="#faq">
           FAQ
         </a>

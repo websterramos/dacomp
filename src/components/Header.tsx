@@ -12,13 +12,11 @@ const Header = () => {
     <header className="items-center justify-center bg-dark-gray px-4 font-semibold text-white shadow-lg md:flex">
       <div className="flex h-20 w-full max-w-7xl items-center justify-between px-4">
         <picture>
-          <a href="#hero">
-            <img
-              className="w-40"
-              src="dacomp-full.png"
-              alt="Logo do DACOMP UNIFEI"
-            />
-          </a>
+          <img
+            className="w-40"
+            src="dacomp-full.png"
+            alt="Logo do DACOMP UNIFEI"
+          />
         </picture>
 
         <div className="hidden md:flex">

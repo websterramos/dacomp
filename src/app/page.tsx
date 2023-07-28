@@ -1,50 +1,34 @@
-import Image from "next/image";
-import Writer from "@/components/Writer";
-import ButtonDown from "@/components/ButtonDown";
+import Window from "@/components/Window";
 import Courses from "@/components/Courses";
 import EventButton from "@/components/EventButton";
+import Product from "@/components/Product";
 import About from "@/components/About";
-import Email from "@/components/Email";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import QuestionResponse from "@/components/QuestionResponse";
 
 export default function Home() {
   return (
-    <main>
-      <section>
-        <header className="flex h-[35rem] w-full flex-col justify-evenly  bg-gradient-to-r from-black from-10% to-light-blue ">
-          <div className="flex justify-center  md:justify-evenly">
-            <div className="flex flex-col items-center justify-center p-16">
-              <h1 className="text-center text-4xl font-bold text-cyan-700 drop-shadow-lg">
-                Bem-vind@ ao
-                <span className="text-white"> DACOMP</span>
-              </h1>
-              <Writer />
-            </div>
+    <main className="text-white">
+      <section className="flex items-center justify-center">
+        <div
+          id="hero-section"
+          className="flex min-h-screen w-full max-w-7xl items-center justify-center px-12 py-16 lg:justify-between"
+        >
+          <Window />
 
-            <Image
-              className=" hidden md:block"
-              src={"/logo.png"}
-              alt="Logo da Dacomp"
-              width={500}
-              height={600}
-              priority
-            />
-          </div>
-
-          <div className="flex items-center justify-center">
-            <ButtonDown />
-          </div>
-        </header>
+          <img
+            className="hidden max-w-md drop-shadow-lg lg:flex"
+            src="dacomp-logo.png"
+            alt="Logo do DACOMP UNIFEI"
+          />
+        </div>
       </section>
 
       <Courses />
 
-      <section id="eventos" className="text-white">
+      <section id="eventos" className="flex items-center justify-center">
         <div
           id="events-section"
-          className="flex min-h-screen w-full flex-col items-center justify-center gap-16 px-4 py-16"
+          className="flex w-full max-w-7xl flex-col items-center justify-center gap-16 px-4 py-16"
         >
           <h3 className="text-center text-4xl font-bold drop-shadow-lg">
             Eventos
@@ -57,81 +41,40 @@ export default function Home() {
         </div>
       </section>
 
-      <About />
-
-      <section id="contato" className="text-white">
+      <section id="produtos" className="flex items-center justify-center">
         <div
-          id="contact-section"
-          className="flex min-h-screen w-full flex-col items-center justify-center gap-16 px-4 py-16"
+          id="products-section"
+          className="flex w-full max-w-7xl flex-col items-center justify-center gap-16 px-4 py-16"
         >
-          <h3 className="text-4xl font-bold drop-shadow-lg">Contato</h3>
+          <h3 className="text-center text-4xl font-bold drop-shadow-lg">
+            Produtos
+          </h3>
 
-          <div
-            id="contact-div"
-            className="flex flex-col gap-8 md:flex-row md:justify-center md:gap-64"
-          >
-            <div
-              id="email-div"
-              className="items flex max-w-full flex-col justify-between gap-4 rounded-2xl bg-dark-gray p-4 drop-shadow-md"
-            >
-              <div id="email-part" className="flex flex-col items-center gap-8">
-                <h3 className="text-2xl font-bold">E-mail</h3>
-                <div className="flex w-full flex-col items-center justify-center gap-3 md:grid md:grid-cols-2">
-                  <Email name="DACOMP" email="dacomp@unifei.edu.br" />
-                  <Email name="Presidente" email="dacomp@unifei.edu.br" />
-                  <Email name="Vice-presidente" email="dacomp@unifei.edu.br" />
-                </div>
-              </div>
-            </div>
-
-            <div
-              id="socials-div"
-              className="items flex h-fit max-w-full flex-col justify-between gap-4 rounded-2xl bg-dark-gray p-4 drop-shadow-md"
-            >
-              <div
-                id="socials-part"
-                className="flex flex-col items-center gap-8"
-              >
-                <h3 className="text-2xl font-bold">Redes Sociais</h3>
-
-                <div
-                  id="socials"
-                  className="flex w-full flex-col items-center justify-center gap-3"
-                >
-                  <div className="w-full rounded-lg bg-gray-800 p-2 hover:text-blue-600 focus:text-blue-600">
-                    <a
-                      href="https://www.instagram.com/dacompunifei/"
-                      target="__blank"
-                      rel="noopener"
-                    >
-                      <button className="flex w-full items-center justify-center gap-4">
-                        <span className="font-medium">Instagram</span>
-                        <FontAwesomeIcon icon={faInstagram} size="lg" />
-                      </button>
-                    </a>
-                  </div>
-
-                  <div className="w-full rounded-lg bg-gray-800 p-2 hover:text-blue-600 focus:text-blue-600">
-                    <a
-                      href="https://www.facebook.com/DacompUNIFEI"
-                      target="__blank"
-                      rel="noopener"
-                    >
-                      <button className="flex w-full items-center justify-center gap-4">
-                        <span className="font-medium">Facebook</span>
-                        <FontAwesomeIcon icon={faFacebook} size="lg" />
-                      </button>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="flex max-w-full flex-col items-center justify-center gap-4 rounded-2xl bg-dark-gray p-4 drop-shadow-lg md:flex-row">
+            <Product imageURL="camiseta.png" name="Camiseta" />
+            <Product imageURL="corta-vento.png" name="Corta Vento" />
+            <Product imageURL="moletom.png" name="Moletom" />
+            <Product imageURL="samba-doll.png" name="Samba/Doll" />
+            <Product imageURL="caneca.png" name="Caneca" />
+            <Product imageURL="tirante.png" name="Tirante" />
           </div>
+
+          <button className="rounded-2xl bg-blue-600 p-4 font-semibold uppercase drop-shadow-lg transition-all duration-500 hover:scale-105 focus:scale-105 focus:outline-none">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe8WZtYCKUaFCPF5rL6WpADlUMY47CQksPX2v5XxJLO5QQsyg/viewform?usp=sf_link"
+              target="__blank"
+              rel="noopener"
+            >
+              Compre agora
+            </a>
+          </button>
         </div>
       </section>
 
-      <section id="faq" className="text-white">
-        <div className="flex min-h-screen w-full flex-col items-center justify-center gap-16 px-4 py-16">
+      <About />
+
+      <section id="faq" className="flex items-center justify-center">
+        <div className="flex w-full max-w-7xl flex-col items-center justify-center gap-16 px-4 py-16">
           <h3 className="text-4xl font-bold drop-shadow-lg">FAQ</h3>
 
           <div className="mx-auto flex max-w-full flex-col items-center justify-center rounded-2xl bg-dark-gray p-2 md:max-w-xl">

@@ -65,18 +65,22 @@ const CoursesChild = ({ updateBgState }) => {
     ],
   });
 
-return (
-    <div className="flex flex-col lg:flex-row items-center justify-center space-x-10 py-10 gap-12 sm:px-0">
+  return (
+    <div className="flex flex-col items-center justify-center gap-12 space-x-10 py-10 sm:px-0 lg:flex-row">
       <Tab.Group>
-        <Tab.List className="flex  justify-between lg:flex-col w-max  rounded-xl gap-4 p-6">
-            {Object.keys(courses).map((course) => (
+        <Tab.List className="flex  w-max justify-between gap-4  rounded-xl p-6 lg:flex-col">
+          {Object.keys(courses).map((course) => (
             <Tab
               key={course}
               onClick={() => handleTabClick(courses[course][0].color)}
               className={({ selected }) =>
                 classNames(
-                  'w-full block  rounded-lg py-2.5 text-white font-semibold leading-5 text-2xl',
-                  'ring-transparent ring-opacity-60 ring-offset-2  focus:outline-none focus:ring-2', selected ? 'bg-neutral-300/50' : 'text-blue-100 hover:bg-white/[0.12] hover:text-white')
+                  "block w-full  rounded-lg py-2.5 text-2xl font-semibold leading-5 text-white",
+                  "ring-transparent ring-opacity-60 ring-offset-2  focus:outline-none focus:ring-2",
+                  selected
+                    ? "bg-neutral-300/50"
+                    : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
+                )
               }
             >
               {course}
@@ -84,18 +88,25 @@ return (
           ))}
         </Tab.List>
 
-        <Tab.Panels className="flex h-[500px] w-[360px]  items-center justify-center shadow md:h-[350px]">
+        <Tab.Panels className="flex h-[500px] w-[360px]  items-center justify-center md:h-[350px]">
           {Object.values(courses).map((course) => (
             <a href={course[0].link}>
               <Tab.Panel
-              className={classNames(
-                'rounded-xl w-max  p-3 ',
-                'ring-transparent ring-opacity-100 ring-offset-2 hover:scale-105 focus:outline-none focus:ring-2'
-              )}
-            >
-               <div key={course[0].id} className='flex flex-col justify-center items-center'>
-                  <h3 className="text-white font-medium leading-5 text-2xl">{course[0].title}</h3>
-                  <p className=" text-justify text-white text-lg max-w-[300px] md:max-w-md align-middle lg:max-w-lg py-4">{course[0].content}</p>
+                className={classNames(
+                  "w-max rounded-xl  p-3 ",
+                  "ring-transparent ring-opacity-100 ring-offset-2 hover:scale-105 focus:outline-none focus:ring-2"
+                )}
+              >
+                <div
+                  key={course[0].id}
+                  className="flex flex-col items-center justify-center"
+                >
+                  <h3 className="text-2xl font-medium leading-5 text-white">
+                    {course[0].title}
+                  </h3>
+                  <p className=" max-w-[300px] py-4 text-justify align-middle text-lg text-white md:max-w-md lg:max-w-lg">
+                    {course[0].content}
+                  </p>
                 </div>
               </Tab.Panel>
             </a>
