@@ -1,9 +1,50 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
-    <footer className="flex justify-center bg-dark-gray text-white">
-      <div className="flex w-full max-w-7xl flex-col items-center justify-center px-4 py-4 md:flex-row md:gap-6">
+    <footer className="flex justify-center gap-16 bg-dark-gray text-white ">
+      <div className="flex w-full max-w-7xl flex-col items-center justify-around px-4 py-4 md:flex-row md:gap-6">
+        <div
+          id="footer-contact"
+          className="flex flex-col items-center gap-6 p-4"
+        >
+          <h2 className="text-xl font-bold uppercase">Contato</h2>
+
+          <a
+            className="text-lg font-medium transition-all duration-500 hover:scale-105 hover:text-blue-600 focus:text-blue-600"
+            href="mailto:dacomp@unifei.edu.br"
+          >
+            dacomp@unifei.edu.br
+          </a>
+
+          <div className="flex gap-6">
+            <a
+              href="https://www.instagram.com/dacompunifei/"
+              target="__blank"
+              rel="noopener"
+            >
+              <FontAwesomeIcon
+                className="transition-all duration-500 hover:scale-105 hover:text-blue-600 focus:text-blue-600"
+                icon={faInstagram}
+                size="2xl"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/DacompUNIFEI"
+              target="__blank"
+              rel="noopener"
+            >
+              <FontAwesomeIcon
+                className="transition-all duration-500 hover:scale-105 hover:text-blue-600 focus:text-blue-600"
+                icon={faFacebook}
+                size="2xl"
+              />
+            </a>
+          </div>
+        </div>
+
         <picture>
           <img
             className="w-64"

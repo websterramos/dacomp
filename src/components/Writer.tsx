@@ -6,20 +6,28 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 const Writer = () => {
   const [text] = useTypewriter({
     words: [
-      "Ciência da Computação",
-      "Engenharia da Computação",
-      "Sistemas de Informação",
+      "ciência-da-computação",
+      "engenharia-da-computação",
+      "sistemas-de-informação",
     ],
-    loop: 5,
+    loop: true,
     typeSpeed: 70,
     deleteSpeed: 50,
     delaySpeed: 1000,
   });
 
   return (
-    <div className="mt-5 text-center text-lg text-white opacity-70">
-      <span>Diretório Acadêmico de {text}</span>
-      <Cursor />
+    <div className="text-medium flex items-center justify-start gap-2 pt-5 text-center text-white">
+      <div className="font-semibold text-white">
+        <span className="text-[#269860]">dacomp@unifei</span>
+        <span>:</span>
+        <span className="text-[#144787]">~</span>
+        <span className="font-normal">$</span>
+      </div>
+      <div>
+        <span> {text}</span>
+        <Cursor />
+      </div>
     </div>
   );
 };
