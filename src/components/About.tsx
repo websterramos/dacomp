@@ -100,7 +100,7 @@ const AboutChild = () => {
 
         <Tab.Panels className='mt-2'>
           
-<div className="h-screen w-full container m-auto md:w-[350px] lg:w-[550px]">
+<div className="h-screen w-full container m-auto md:w-[350px] lg:w-[550px] p-0">
     {Object.values(dacomp).map((topic, idx) => (
       <Tab.Panel
         key={idx}
