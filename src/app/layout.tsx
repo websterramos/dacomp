@@ -18,10 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+      <body className={`bg-gradient-to-r from-black from-10% to-light-blue ${inter.className}`}>
+        <Header/>
+        {children}
+        <Footer/>
       </body>
     </html>
   );
