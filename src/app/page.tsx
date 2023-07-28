@@ -37,12 +37,16 @@ export default function Home() {
         </header>
       </section>
 
-      <Courses />
+      <section>
+        <Courses />
+      </section>
 
-      <About />
+      <section>
+        <About />
+      </section>
 
       <section id="contato" className="bg-dark-gray text-white">
-        <div className="flex w-full flex-col items-center justify-center gap-16 px-4 py-16">
+        <div className="flex w-full flex-col items-center justify-center gap-16 px-4">
           <h3 className="text-4xl font-bold drop-shadow-lg">Contato</h3>
 
           <div className="flex flex-col gap-16 md:flex-row md:justify-between md:gap-64">
