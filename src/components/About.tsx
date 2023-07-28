@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
 import classNames from "../utils/classesUtil";
+import MemberCard from "./MemberCard";
 
 const About = () => {
   return (
@@ -72,33 +73,32 @@ const AboutChild = () => {
           ))}
         </Tab.List>
 
-        <Tab.Panels className='mt-2'>
-          
-<div className="h-screen w-full container m-auto md:w-[350px] lg:w-[550px] p-0">
-    {Object.values(dacomp).map((topic, idx) => (
-      <Tab.Panel
-        key={idx}
-        className={classNames(
-          'rounded-xl bg-white p-3',
-          'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
-        )}
-      >
-        {Array.isArray(topic) ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {topic.map((member) => (
-              <MemberCard key={member.id} member={member} />
+        <Tab.Panels className="mt-2">
+          <div className="container m-auto h-screen w-full p-0 md:w-[350px] lg:w-[550px]">
+            {Object.values(dacomp).map((topic, idx) => (
+              <Tab.Panel
+                key={idx}
+                className={classNames(
+                  "rounded-xl bg-white p-3",
+                  "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
+                )}
+              >
+                {Array.isArray(topic) ? (
+                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                    {topic.map((member) => (
+                      <MemberCard key={member.id} member={member} />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="max-w-[550px] overflow-x-auto">
+                    <h1>{topic.title}</h1>
+                    <p className="text-justify">{topic.content}</p>
+                  </div>
+                )}
+              </Tab.Panel>
             ))}
-        </div>
-        ) : (
-          <div className='max-w-[550px] overflow-x-auto'>
-            <h1>{topic.title}</h1>
-            <p className="text-justify">{topic.content}</p>
           </div>
-        )}
-      </Tab.Panel>
-    ))}
-</div>
-       </Tab.Panels>
+        </Tab.Panels>
       </Tab.Group>
     </div>
   );
