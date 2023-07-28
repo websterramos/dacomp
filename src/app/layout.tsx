@@ -8,16 +8,15 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'DACOMP',
-  description: 'Site do diretorio academico de computaçao da Unifei',
-}
+  title: "DACOMP",
+  description: "Site do Diretório Acadêmico de Computação da UNIFEI",
+};
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-
     <html lang="pt-BR">
       <body className={`bg-gradient-to-r from-black from-10% to-light-blue ${inter.className}`}>
         <Header/>

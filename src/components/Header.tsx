@@ -9,7 +9,7 @@ const Header = () => {
   let [showMobileMenu, setShowMobileMenu] = useState(false);
 
   return (
-    <header className="bg-dark-gray items-center justify-center px-4 font-semibold text-white shadow-lg lg:flex">
+    <header className="items-center justify-center bg-dark-gray px-4 font-semibold text-white shadow-lg md:flex">
       <div className="flex h-20 w-full max-w-7xl items-center justify-between px-4">
         <picture>
           <a href="#hero">
@@ -21,18 +21,18 @@ const Header = () => {
           </a>
         </picture>
 
-        <div className="hidden lg:flex">
+        <div className="hidden md:flex">
           <Menu />
         </div>
 
         <button
-          className="lg:hidden"
+          className="md:hidden"
           onClick={() => setShowMobileMenu(!showMobileMenu)}
         >
           <FontAwesomeIcon icon={faBars} size="xl" />
         </button>
       </div>
-      <div className="lg:hidden">{showMobileMenu && <Menu />}</div>
+      <div className="md:hidden">{showMobileMenu && <Menu />}</div>
     </header>
   );
 };

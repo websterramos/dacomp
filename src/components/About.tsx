@@ -1,97 +1,71 @@
-'use client'
+"use client";
 
 import { useState } from "react";
-import { Tab } from '@headlessui/react';
-import classNames from '@/utils/classesUtil'
-import { Member } from './MemberCard'
-import MemberCard from './MemberCard'
+import { Tab } from "@headlessui/react";
+import classNames from "../utils/classesUtil";
 
 const About = () => {
-
   return (
-      <div className={'flex flex-col items-center justify-center p-4' }>
-        <div className='flex justify-center items-center'>
-          <h3 className='text-center text-4xl text-white font-bold drop-shadow-lg p-16' id='About'>Sobre</h3>
-        </div>
-
-      <AboutChild/>
+    <div className={"flex-col"}>
+      <div className="flex items-center justify-center">
+        <h3
+          className="p-16 text-center text-4xl font-bold text-white drop-shadow-lg"
+          id="Courses"
+        >
+          Sobre
+        </h3>
       </div>
-  )
-}
+
+      <AboutChild />
+    </div>
+  );
+};
 
 const AboutChild = () => {
-
-  let [dacomp] = useState<{
+  let [dacomp] = useState({
     Sobre: {
-      title: string;
-      content: string;
-    };
-
-    Membros: Member[];
-  }>({
-
-    Sobre: {
-      title: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.',
-      content: 'Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.'
+      id: 0,
+      title:
+        "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+      content:
+        "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
     },
 
-    Membros: [{
-      id: 0,
-      name: 'Ana',
-      course: 'CCO',
-      position: 'Diretora',
-      phrase: 'nada me faltara',
-      photo: '/membros/Ana.jpg',
-      link: '#'
-      },
-      
-      {
+    Objetivo: {
       id: 1,
-      name: 'Theo',
-      course: 'SIN',
-      position: 'Marketing',
-      phrase: 'nada me faltara',
-      photo: '/membros/Theo.jpg',
-      link: '#'
-      },
-      
+      title:
+        "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+      content:
+        "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
+    },
+
+    Membros: [
       {
-      id: 2,
-      name: 'Mario',
-      course: 'ECO',
-      position: 'Sla',
-      phrase: 'nada me faltara',
-      photo: '/membros/Theo.jpg',
-      link: '#'
+        id: 2,
+        title:
+          "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+        content:
+          "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
       },
-  
-      {
-      id: 3,
-      name: 'Hellen',
-      course: 'ECO',
-      position: 'Sla',
-      phrase: 'nada me faltara',
-      photo: '/membros/Theo.jpg',
-      link: '#'
-      }
-    ]
+    ],
   });
 
   return (
-    <div className="max-w-md px-2 py-16 sm:px-0">
+    <div className="w-full max-w-md flex-col justify-center px-2 py-16 sm:px-0">
       <Tab.Group>
         <Tab.List className="flex space-x-1 rounded-xl p-1">
           {Object.keys(dacomp).map((topic) => (
             <Tab
               key={topic}
-              className={({ selected }) => 
+              className={({ selected }) =>
                 classNames(
-                  'w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-md',
-                  'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
+                  "w-full rounded-lg py-2.5 text-sm font-medium leading-5",
+                  "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
                   selected
-                    ? 'bg-white shadow'
-                    : 'text-blue-100 hover:bg-white/[0.12] hover:text-white'
-                )}
+                    ? "bg-white shadow"
+                    : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
+                )
+              }
             >
               {topic}
             </Tab>
@@ -127,7 +101,7 @@ const AboutChild = () => {
        </Tab.Panels>
       </Tab.Group>
     </div>
-  )
-}
+  );
+};
 
 export default About;
