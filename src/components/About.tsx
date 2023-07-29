@@ -87,7 +87,6 @@ const AboutChild = () => {
       <Tab.Group>
         <Tab.List className="flex space-x-1 rounded-xl p-1">
             <Tab
-              key={topic}
               className={({ selected }) =>
                 classNames(
                   "w-full rounded-lg bg-dark-gray py-2.5 font-medium  text-blue-600 outline-none focus:ring-2 focus:ring-blue-600",
@@ -115,7 +114,7 @@ const AboutChild = () => {
         </Tab.List>
 
         <Tab.Panels className="mt-2">
-          <div className="container m-auto h-screen w-full md:w-[400px]">
+          <div className="container m-auto h-screen w-full max-h-[500px] md:w-[400px]">
             {Object.values(dacomp).map((topic, idx) => (
               <Tab.Panel
                 key={idx}

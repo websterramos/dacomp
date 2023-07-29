@@ -7,6 +7,8 @@ interface IProps {
 
 const EventButton = ({ event }: IProps) => {
   return (
+    event == "Festas"
+    ?
     <div className="mx-auto flex max-w-full flex-col items-center justify-center gap-4 rounded-2xl bg-dark-gray p-2 drop-shadow-lg md:max-w-xl">
       <h3 className="gap-4 p-2 text-2xl font-semibold uppercase text-white drop-shadow-md">
         {event}
@@ -21,6 +23,21 @@ const EventButton = ({ event }: IProps) => {
           imageURL="computaria.png"
           name="Computaria"
           text="A Computaria é uma festa tradicional que ocorre no segundo semestre do ano"
+        />
+      </div>
+    </div>
+
+    :
+    
+    <div className="mx-auto flex max-w-full flex-col items-center justify-center gap-4 rounded-2xl bg-dark-gray p-2 drop-shadow-lg md:max-w-xl">
+      <h3 className="gap-4 p-2 text-2xl font-semibold uppercase text-white drop-shadow-md">
+        {event}
+      </h3>
+      <div className="mx-auto flex flex-col justify-center px-2 ">
+        <Event
+          imageURL="logo_seprog.png"
+          name="Seprog"
+          text=" A Semana de Programação ocorre anualmente, ensinando aos alunos oque existe de mais quente no mundo da tecnologia."
         />
       </div>
     </div>
