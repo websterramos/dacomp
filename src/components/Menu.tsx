@@ -8,10 +8,6 @@ const Menu = () => {
           Cursos
         </a>
 
-        <a className="hover:text-blue-400" href="#eventos">
-          Eventos
-        </a>
-
         <a className="hover:text-blue-400" href="#produtos">
           Produtos
         </a>

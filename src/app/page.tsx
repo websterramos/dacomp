@@ -1,6 +1,5 @@
 import Writer from "@/components/Writer";
 import Courses from "@/components/Courses";
-import EventButton from "@/components/EventButton";
 import Product from "@/components/Product";
 import About from "@/components/About";
 import QuestionResponse from "@/components/QuestionResponse";
@@ -34,20 +33,6 @@ export default function Home() {
 
       <section id="cursos">
         <Courses />
-      </section>
-
-      <section id="eventos" className="flex items-center justify-center">
-        <div
-          id="events-section"
-          className="flex w-full max-w-7xl flex-col items-center justify-center gap-16 px-4 py-16"
-        >
-          <h3 className="text-center text-4xl font-bold drop-shadow-lg">
-            Eventos
-          </h3>
-
-          <EventButton event="Festas"/>
-          <EventButton event="Academico"/>
-        </div>
       </section>
 
       <section id="produtos" className="flex items-center justify-center">
