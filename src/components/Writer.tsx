@@ -10,16 +10,17 @@ const Writer = () => {
       "Engenharia da Computação",
       "Sistemas de Informação",
     ],
-    loop: 5,
+    loop: true,
     typeSpeed: 70,
     deleteSpeed: 50,
     delaySpeed: 1000,
   });
 
   return (
-    <div className="mt-5 text-center text-lg text-white opacity-70">
-      <span>Diretório Acadêmico de {text}</span>
-      <Cursor />
+    <div className="flex items-center justify-center gap-2 pt-5 text-center text-lg font-semibold text-white">
+      <span>
+        Diretório Acadêmico de {text} <Cursor />
+      </span>
     </div>
   );
 };

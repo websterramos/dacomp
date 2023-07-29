@@ -1,90 +1,85 @@
-import Image from "next/image";
 import Writer from "@/components/Writer";
-import ButtonDown from "@/components/ButtonDown";
 import Courses from "@/components/Courses";
+import Product from "@/components/Product";
 import About from "@/components/About";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import QuestionResponse from "@/components/QuestionResponse";
+import ButtonDown from "@/components/ButtonDown";
 
 export default function Home() {
   return (
-    <main>
-      <section>
-        <header className="flex h-[35rem] w-full flex-col justify-evenly  bg-gradient-to-r from-black from-10% to-light-blue ">
-          <div className="flex justify-center  md:justify-evenly">
-            <div className="flex flex-col items-center justify-center p-16">
-              <h1 className="text-center text-4xl font-bold text-cyan-700 drop-shadow-lg">
-                Bem-vind@ ao
-                <span className="text-white"> DACOMP</span>
-              </h1>
-              <Writer />
-            </div>
-
-            <Image
-              className=" hidden md:block"
-              src={"/logo.png"}
-              alt="Logo da Dacomp"
-              width={500}
-              height={600}
-              priority
-            />
+    <main className="text-white">
+      <section className="flex flex-col pb-2 items-center justify-center">
+        <div
+          id="hero-section"
+          className="flex w-full max-w-7xl items-center justify-center px-12 py-16 lg:justify-between"
+        >
+          <div className="flex flex-col content-stretch items-center justify-center rounded-lg drop-shadow-md ">
+            <h1 className="text-center text-5xl font-bold text-blue-600 drop-shadow-lg">
+              Bem-vind@ ao
+              <span className="text-white drop-shadow-lg"> DACOMP</span>
+            </h1>
+            <Writer />
           </div>
 
-          <div className="flex items-center justify-center">
-            <ButtonDown />
-          </div>
-        </header>
+          <img
+            className="hidden max-w-md drop-shadow-lg lg:flex"
+            src="dacomp-logo.png"
+            alt="Logo do DACOMP UNIFEI"
+          />
+        </div>
+
+        <ButtonDown/>
       </section>
 
-      <Courses />
+      <section id="cursos">
+        <Courses />
+      </section>
 
-      <About />
+      <section id="produtos" className="flex items-center justify-center">
+        <div
+          id="products-section"
+          className="flex w-full max-w-7xl flex-col items-center justify-center gap-16 px-4 py-16"
+        >
+          <h3 className="text-center text-4xl font-bold drop-shadow-lg">
+            Produtos
+          </h3>
 
-      <section id="contato" className="bg-dark-gray text-white">
-        <div className="flex w-full flex-col items-center justify-center gap-16 px-4 py-16">
-          <h3 className="text-4xl font-bold drop-shadow-lg">Contato</h3>
-
-          <div className="flex flex-col gap-16 md:flex-row md:justify-between md:gap-64">
-            <div className="items flex flex-col justify-between gap-4">
-              <div className="flex flex-col items-center gap-8">
-                <h3 className="text-2xl font-bold">E-mail</h3>
-                <div className="flex flex-col gap-3">
-                  <div className="flex flex-col text-xl">
-                    <span className="font-bold text-blue-600">Dacomp</span>
-                    <a href="mailto:contato@email.com">contato@email.com</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="items flex flex-col justify-between gap-4">
-              <div className="flex flex-col items-center gap-8">
-                <h3 className="text-2xl font-bold">Redes Sociais</h3>
-                <div className="flex items-center justify-between gap-12">
-                  <a
-                    href="https://www.instagram.com/dacompunifei/"
-                    target="__blank"
-                    rel="noopener"
-                  >
-                    <FontAwesomeIcon icon={faInstagram} size="2xl" />
-                  </a>
-
-                  <a
-                    href="https://www.facebook.com/DacompUNIFEI"
-                    target="__blank"
-                    rel="noopener"
-                  >
-                    <FontAwesomeIcon icon={faFacebook} size="2xl" />
-                  </a>
-                </div>
-              </div>
-            </div>
+          <div className="lg:grid-cols-auto flex max-w-full flex-col items-center justify-center gap-4 rounded-2xl bg-dark-gray p-4 drop-shadow-lg md:grid md:max-w-xl md:grid-cols-2">
+            <Product imageURL="camiseta.png" name="Camiseta" />
+            <Product imageURL="corta-vento.png" name="Corta Vento" />
+            <Product imageURL="moletom.png" name="Moletom" />
+            <Product imageURL="samba-doll.png" name="Samba/Doll" />
+            <Product imageURL="caneca.png" name="Caneca" />
+            <Product imageURL="tirante.png" name="Tirante" />
           </div>
+
+          <button className="rounded-2xl bg-blue-600 p-4 font-semibold uppercase drop-shadow-lg transition-all duration-500 hover:scale-105 focus:scale-105 focus:outline-none">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe8WZtYCKUaFCPF5rL6WpADlUMY47CQksPX2v5XxJLO5QQsyg/viewform?usp=sf_link"
+              target="__blank"
+              rel="noopener"
+            >
+              Compre agora
+            </a>
+          </button>
         </div>
       </section>
 
-      <section id="faq" className="text-white">
-        <div className="flex min-h-screen w-full flex-col items-center justify-center gap-16 px-4 py-16">
+      <section id="sobre" className="flex items-center justify-center">
+        <div
+          id="about-section"
+          className="flex w-full max-w-7xl flex-col items-center justify-center gap-16 px-4 py-16"
+        >
+          <h3 className="text-center text-4xl font-bold drop-shadow-lg">
+            Sobre
+          </h3>
+
+          <About />
+        </div>
+      </section>
+
+      <section id="faq" className="flex items-center justify-center pt-[32rem] lg:pt-0">
+        <div className="flex w-full max-w-7xl flex-col items-center justify-center gap-16 px-4 py-16">
           <h3 className="text-4xl font-bold drop-shadow-lg">FAQ</h3>
 
           <div className="mx-auto flex max-w-full flex-col items-center justify-center rounded-2xl bg-dark-gray p-2 md:max-w-xl">
