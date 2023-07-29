@@ -75,7 +75,7 @@ export default function Home() {
 
       <About />
 
-      <section id="faq" className="flex items-center justify-center">
+      <section id="faq" className="flex items-center justify-center pt-[32rem] lg:pt-0">
         <div className="flex w-full max-w-7xl flex-col items-center justify-center gap-16 px-4 py-16">
           <h3 className="text-4xl font-bold drop-shadow-lg">FAQ</h3>
 

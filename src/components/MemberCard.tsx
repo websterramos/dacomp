@@ -23,7 +23,7 @@ const MemberCard: React.FC<{ member: Member }> = ({ member }) => {
 
   return (
     <div
-      className={`max-h-[13rem] max-w-[10rem] rounded-lg bg-gray-800 p-3 shadow-md transition-all duration-500 hover:scale-105 hover:border-${borderColor}`}
+      className={`max-h-[13rem] max-w-[10rem] rounded-lg bg-gray-800 p-3 shadow-md transition-all duration-500 hover:scale-105 hover:border-${borderColor} scroll-ml-6 snap-start`}
     >
       <a href={link} target="_blank" rel="noopener noreferrer">
         <img

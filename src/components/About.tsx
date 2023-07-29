@@ -40,18 +40,17 @@ const AboutChild = () => {
     },
 
     Membros: [
+
       {
-        id: 0,
         name: "Ana",
         course: "CCO",
-        role: "Diretora",
+        role: "Diretora Financeiro",
         phrase: "nada me faltara",
         photo: "/membros/Ana.jpg",
         link: "#",
       },
 
       {
-        id: 1,
         name: "Theo",
         course: "SIN",
         role: "Marketing",
@@ -61,8 +60,16 @@ const AboutChild = () => {
       },
 
       {
-        id: 2,
         name: "Mario",
+        course: "ECO",
+        role: "Repr. CCO",
+        phrase: "nada me faltara",
+        photo: "/membros/Mario.jpg",
+        link: "#",
+      },
+
+      {
+        name: "Hellen",
         course: "ECO",
         role: "Sla",
         phrase: "nada me faltara",
@@ -71,10 +78,71 @@ const AboutChild = () => {
       },
 
       {
-        id: 3,
-        name: "Hellen",
+        name: "Luara",
+        course: "SIN",
+        role: "Repr. SIN",
+        phrase: "nada me faltara",
+        photo: "/membros/Luara.png",
+        link: "#",
+      },
+      
+      {
+        name: "Mariana",
         course: "ECO",
-        role: "Sla",
+        role: "Vice Presidente",
+        phrase: "nada me faltara",
+        photo: "/membros/Ana.jpg",
+        link: "#",
+      },
+
+      {
+        name: "Clara",
+        course: "ECO",
+        role: "Presidente",
+        phrase: "nada me faltara",
+        photo: "/membros/Clara.png",
+        link: "#",
+      },
+
+      {
+        name: "Gui Martins",
+        course: "ECO",
+        role: "Diretor de Eventos",
+        phrase: "nada me faltara",
+        photo: "/membros/Theo.jpg",
+        link: "#",
+      },
+      
+      {
+        name: "Joao Paulo",
+        course: "CCO",
+        role: "Assessor de Eventos",
+        phrase: "nada me faltara",
+        photo: "/membros/Theo.jpg",
+        link: "#",
+      },
+      
+      {
+        name: "Botrel",
+        course: "CCO",
+        role: "Assessor de Graduaçao",
+        phrase: "nada me faltara",
+        photo: "/membros/Botrel.png",
+        link: "#",
+      },
+      
+      {
+        name: "Ricardo",
+        course: "ECO",
+        role: "Repr. de Graduaçao",
+        phrase: "nada me faltara",
+        photo: "/membros/Theo.jpg",
+        link: "#",
+      },
+{
+        name: "Felipe",
+        course: "ECO",
+        role: "Assessor de Graduaçao",
         phrase: "nada me faltara",
         photo: "/membros/Theo.jpg",
         link: "#",
@@ -105,7 +173,7 @@ const AboutChild = () => {
                   'w-full rounded-lg py-2.5 text-sm font-medium leading-5',
                   'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
                   selected
-                    ? 'bg-white shadow'
+                    ? 'text-blue-600 ring-2 ring-blue-600'
                     : 'text-blue-100 hover:bg-white/[0.12] hover:text-white'
                 )}
             >
@@ -114,7 +182,7 @@ const AboutChild = () => {
         </Tab.List>
 
         <Tab.Panels className="mt-2">
-          <div className="container m-auto h-screen w-full max-h-[500px] md:w-[400px]">
+          <div className="container m-auto max-w-[400px] h-screen w-full  lg:max-h-[800px] md:w-[600px]">
             {Object.values(dacomp).map((topic, idx) => (
               <Tab.Panel
                 key={idx}
@@ -123,13 +191,13 @@ const AboutChild = () => {
                 )}
               >
                 {Array.isArray(topic) ? (
-                  <div className="grid grid-cols-2 place-content-center gap-4 md:grid-cols-2">
+                  <div className="grid grid-cols-2 place-content-center gap-4 md:grid-cols-2 lg:grid-cols-3">
                     {topic.map((member) => (
-                      <MemberCard key={member.id} member={member} />
+                      <MemberCard  member={member} />
                     ))}
                   </div>
                 ) : (
-                  <div className="max-w-[400px] overflow-x-auto">
+                  <div className="max-w-[500px] overflow-x-auto">
                     <h1>{topic.title}</h1>
                     <p className="text-justify">{topic.content}</p>
                   </div>
