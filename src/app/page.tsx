@@ -1,6 +1,6 @@
-import Window from "@/components/Window";
+import Writer from "@/components/Writer";
 import Courses from "@/components/Courses";
-import EventButton from "@/components/EventButton";
+import Events from "@/components/Events";
 import Product from "@/components/Product";
 import About from "@/components/About";
 import QuestionResponse from "@/components/QuestionResponse";
@@ -11,9 +11,15 @@ export default function Home() {
       <section className="flex items-center justify-center">
         <div
           id="hero-section"
-          className="flex min-h-screen w-full max-w-7xl items-center justify-center px-12 py-16 lg:justify-between"
+          className="flex w-full max-w-7xl items-center justify-center px-12 py-16 lg:justify-between"
         >
-          <Window />
+          <div className="flex flex-col content-stretch items-center justify-center rounded-lg drop-shadow-md ">
+            <h1 className="text-center text-5xl font-bold text-blue-600 drop-shadow-lg">
+              Bem-vind@ ao
+              <span className="text-white drop-shadow-lg"> DACOMP</span>
+            </h1>
+            <Writer />
+          </div>
 
           <img
             className="hidden max-w-md drop-shadow-lg lg:flex"
@@ -23,7 +29,9 @@ export default function Home() {
         </div>
       </section>
 
-      <Courses />
+      <section id="cursos">
+        <Courses />
+      </section>
 
       <section id="eventos" className="flex items-center justify-center">
         <div
@@ -34,10 +42,7 @@ export default function Home() {
             Eventos
           </h3>
 
-          <div className="flex flex-col gap-16 md:flex-row">
-            <EventButton event="Festas" />
-            <EventButton event="Acadêmicos" />
-          </div>
+          <Events />
         </div>
       </section>
 
@@ -50,7 +55,7 @@ export default function Home() {
             Produtos
           </h3>
 
-          <div className="flex max-w-full flex-col items-center justify-center gap-4 rounded-2xl bg-dark-gray p-4 drop-shadow-lg md:flex-row">
+          <div className="lg:grid-cols-auto flex max-w-full flex-col items-center justify-center gap-4 rounded-2xl bg-dark-gray p-4 drop-shadow-lg md:grid md:max-w-xl md:grid-cols-2">
             <Product imageURL="camiseta.png" name="Camiseta" />
             <Product imageURL="corta-vento.png" name="Corta Vento" />
             <Product imageURL="moletom.png" name="Moletom" />
@@ -71,10 +76,21 @@ export default function Home() {
         </div>
       </section>
 
-      <About />
+      <section id="sobre" className="flex items-center justify-center">
+        <div
+          id="about-section"
+          className="flex w-full max-w-7xl flex-col items-center justify-center gap-16 px-4 py-16"
+        >
+          <h3 className="text-center text-4xl font-bold drop-shadow-lg">
+            Sobre
+          </h3>
+
+          <About />
+        </div>
+      </section>
 
       <section id="faq" className="flex items-center justify-center">
-        <div className="flex w-full max-w-7xl flex-col items-center justify-center gap-16 px-4 py-16">
+        <div className="flex w-full max-w-7xl flex-col items-center justify-center gap-16 px-4 pb-32">
           <h3 className="text-4xl font-bold drop-shadow-lg">FAQ</h3>
 
           <div className="mx-auto flex max-w-full flex-col items-center justify-center rounded-2xl bg-dark-gray p-2 md:max-w-xl">

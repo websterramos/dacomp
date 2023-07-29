@@ -12,7 +12,9 @@ const Courses = () => {
   };
 
   return (
-    <div className={`flex-col ${bgState} overflow-hidden`}>
+    <div
+      className={`flex-col bg-gradient-to-r from-black from-10% to-light-blue ${bgState} overflow-hidden`}
+    >
       <div className="flex items-center justify-center">
         <h3
           className="p-16 text-center text-4xl font-bold text-white drop-shadow-lg"
@@ -88,7 +90,7 @@ const CoursesChild = ({ updateBgState }) => {
           ))}
         </Tab.List>
 
-        <Tab.Panels className="flex h-[500px] w-[360px]  items-center justify-center md:h-[350px]">
+        <Tab.Panels className="flex h-[500px] w-[360px]  items-center justify-center  md:h-[350px]">
           {Object.values(courses).map((course) => (
             <a href={course[0].link}>
               <Tab.Panel

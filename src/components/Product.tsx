@@ -19,7 +19,7 @@ const Product = ({ imageURL, name }: IProps) => {
         onClick={() => setIsOpen(true)}
         className="mx-auto flex w-full flex-col items-center gap-2 rounded-lg bg-gray-800 p-4 text-white"
       >
-        <img className="max-w-32 md:max-h-48" src={imageURL} />
+        <img className="max-w-32 rounded-lg md:max-h-48" src={imageURL} />
         <h3 className="text-lg font-medium">{name}</h3>
       </button>
 
@@ -28,7 +28,7 @@ const Product = ({ imageURL, name }: IProps) => {
         open={isOpen}
         onClose={() => setIsOpen(false)}
       >
-        <div className="fixed inset-0 flex items-center justify-center">
+        <div className="fixed inset-0 flex items-center justify-center bg-black/70">
           <Dialog.Panel className="rounded-2xl border-2 border-dark-gray bg-gray-800 p-4 text-white drop-shadow-lg">
             <div className="flex flex-col gap-8">
               <button
@@ -37,7 +37,7 @@ const Product = ({ imageURL, name }: IProps) => {
               >
                 <FontAwesomeIcon icon={faXmark} size="xl" />
               </button>
-              <img className="max-w-sm" src={imageURL} />
+              <img className="max-w-sm rounded-lg" src={imageURL} />
             </div>
           </Dialog.Panel>
         </div>

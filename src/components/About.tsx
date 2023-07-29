@@ -8,16 +8,7 @@ import MemberCard from "./MemberCard";
 
 const About = () => {
   return (
-    <div className={"flex flex-col items-center justify-center p-4"}>
-      <div className="flex items-center justify-center">
-        <h3
-          className="p-16 text-center text-4xl font-bold text-white drop-shadow-lg"
-          id="About"
-        >
-          Sobre
-        </h3>
-      </div>
-
+    <div className={"flex-col"}>
       <AboutChild />
     </div>
   );
@@ -83,7 +74,7 @@ const AboutChild = () => {
   });
 
   return (
-    <div className="max-w-md px-2 py-16 sm:px-0">
+    <div className="max-w-md px-2 sm:px-0">
       <Tab.Group>
         <Tab.List className="flex space-x-1 rounded-xl p-1">
           {Object.keys(dacomp).map((topic) => (
@@ -91,10 +82,10 @@ const AboutChild = () => {
               key={topic}
               className={({ selected }) =>
                 classNames(
-                  "w-full rounded-lg bg-dark-gray py-2.5 font-medium  text-blue-600 outline-none focus:ring-2 focus:ring-blue-600",
+                  "w-full rounded-lg bg-blue-600 py-2.5 font-medium  text-white outline-none focus:ring-2 focus:ring-blue-600",
                   selected
                     ? "text-blue-600 ring-2 ring-blue-600"
-                    : "text-white hover:bg-gray-800"
+                    : "bg-dark-gray text-white hover:bg-gray-800"
                 )
               }
             >
