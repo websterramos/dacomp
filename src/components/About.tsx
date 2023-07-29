@@ -77,25 +77,36 @@ const AboutChild = () => {
     <div className="max-w-md px-2 sm:px-0">
       <Tab.Group>
         <Tab.List className="flex space-x-1 rounded-xl p-1">
-          {Object.keys(dacomp).map((topic) => (
-            <Tab
-              key={topic}
-              className={({ selected }) =>
-                classNames(
-                  "w-full rounded-lg bg-blue-600 py-2.5 font-medium  text-white outline-none focus:ring-2 focus:ring-blue-600",
-                  selected
-                    ? "text-blue-600 ring-2 ring-blue-600"
-                    : "bg-dark-gray text-white hover:bg-gray-800"
-                )
-              }
-            >
-              {topic}
-            </Tab>
-          ))}
+          <Tab
+            className={({ selected }) =>
+              classNames(
+                "w-full rounded-lg bg-blue-600 py-2.5 font-medium  text-white outline-none focus:ring-2 focus:ring-blue-600",
+                selected
+                  ? "text-blue-600 ring-2 ring-blue-600"
+                  : "bg-dark-gray text-white hover:bg-gray-800"
+              )
+            }
+          >
+            Sobre
+          </Tab>
+
+          <Tab
+            className={({ selected }) =>
+              classNames(
+                "w-full rounded-lg py-2.5 text-sm font-medium leading-5",
+                "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
+                selected
+                  ? "bg-white shadow"
+                  : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
+              )
+            }
+          >
+            Membros
+          </Tab>
         </Tab.List>
 
         <Tab.Panels className="mt-2">
-          <div className="container m-auto h-screen w-full md:w-[400px]">
+          <div className="container m-auto h-screen max-h-[500px] w-full md:w-[400px]">
             {Object.values(dacomp).map((topic, idx) => (
               <Tab.Panel
                 key={idx}
