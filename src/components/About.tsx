@@ -34,9 +34,9 @@ const AboutChild = () => {
   }>({
     Sobre: {
       title:
-        "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+        "Oque é uma Unidade Academica?",
       content:
-        "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
+        "Unidades Acadêmicas ou Institutos são os órgãos da Universidade responsáveis em exercer todas as atividades necessárias para o desenvolvimento do ensino, ou seja, compete às UAs planejar, organizar, coordenar e avaliar as atividades de ensino, pesquisa e extensão, além de planejar e administrar os recursos humanos, orçamentários, financeiros e materiais sob sua responsabilidade.\nSão organizadas por áreas do conhecimento, como por exemplo o IEM - Instituto de Engenharia Mecânica, IRN - Instituto de Recursos Naturais ou nosso querido IMC. E cada UA é constituída por uma Assembleia do Instituto e um Conselho Diretor, que são representados por docentes, discentes e servidores técnicos.",
     },
 
     Membros: [
@@ -182,7 +182,7 @@ const AboutChild = () => {
         </Tab.List>
 
         <Tab.Panels className="mt-2">
-          <div className="container m-auto max-w-[400px] h-screen w-full  lg:max-h-[800px] md:w-[600px]">
+          <div className="container m-auto max-w-[400px] h-screen w-full  lg:max-h-[800px] md:max-w-[700px]">
             {Object.values(dacomp).map((topic, idx) => (
               <Tab.Panel
                 key={idx}
@@ -198,8 +198,8 @@ const AboutChild = () => {
                   </div>
                 ) : (
                   <div className="max-w-[500px] overflow-x-auto">
-                    <h1>{topic.title}</h1>
-                    <p className="text-justify">{topic.content}</p>
+                    <h1 className="text-xl">{topic.title}</h1>
+                    <p className="text-justify pt-2">{topic.content}</p>
                   </div>
                 )}
               </Tab.Panel>

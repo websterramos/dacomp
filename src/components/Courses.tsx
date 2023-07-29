@@ -99,12 +99,12 @@ const CoursesChild = ({ updateBgState }) => {
               >
                 <div
                   key={course[0].id}
-                  className="flex flex-col items-center justify-center"
+                  className="flex flex-col items-center justify-center p-0"
                 >
                   <h3 className="text-2xl font-medium leading-5 text-white">
                     {course[0].title}
                   </h3>
-                  <p className=" max-w-[300px] py-4 text-justify align-middle text-lg text-white md:max-w-md lg:max-w-lg">
+                  <p className=" max-w-[300px] py-4 text-justify align-middle text-lg text-white  md:max-w-md lg:max-w-lg">
                     {course[0].content}
                   </p>
                 </div>
